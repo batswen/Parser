@@ -112,7 +112,7 @@ class Parser {
 		nd_Prtc("Prtc"), nd_Prts("Prts"), nd_Prti("Prti"), nd_While("While"),
 		nd_Assign("Assign"), nd_Negate("Negate"), nd_Not("Not"), nd_Mul("Multiply"), nd_Div("Divide"), nd_Mod("Mod"), nd_Add("Add"),
 		nd_Sub("Subtract"), nd_Lss("Less"), nd_Leq("LessEqual"),
-		nd_Gtr("Greater"), nd_Geq("GreaterEqual"), nd_Eql("Equal"), nd_Neq("NotEqual"), nd_And("And"), nd_Or("Or")
+		nd_Gtr("Greater"), nd_Geq("GreaterEqual"), nd_Eql("Equal"), nd_Neq("NotEqual"), nd_And("And"), nd_Or("Or");
 		
 		private final String name;
 		
@@ -121,7 +121,7 @@ class Parser {
 		}
 		
 		@Override
-		public String tostring() { return this.name; }
+		public String toString() { return this.name; }
 	}
     static void error(int line, int pos, String msg) {
         if (line > 0 && pos > 0) {
@@ -264,7 +264,7 @@ class Parser {
 		if (t == null) {
 			System.out.println(";");
 		} else {
-			System.out.printf("%-14s", t.nt.toString().substring(3));
+			System.out.printf("%-14s", t.nt);
 			if (t.nt == NodeType.nd_Ident || t.nt == NodeType.nd_Integer || t.nt == NodeType.nd_String) {
 				System.out.println(" " + t.value);
 			} else {
