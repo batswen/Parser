@@ -108,9 +108,20 @@ class Parser {
 		NodeType getNodeType() { return this.node_type; }
     }
 	static enum NodeType {
-		nd_None, nd_Ident, nd_String, nd_Integer, nd_Sequence, nd_If, nd_Prtc, nd_Prts, nd_Prti, nd_While,
-		nd_Assign, nd_Negate, nd_Not, nd_Mul, nd_Div, nd_Mod, nd_Add, nd_Sub, nd_Lss, nd_Leq,
-		nd_Gtr, nd_Geq, nd_Eql, nd_Neq, nd_And, nd_Or
+		nd_None(""), nd_Ident("Identifier"), nd_String("String"), nd_Integer("Integer"), nd_Sequence("Sequence"), nd_If("If"),
+		nd_Prtc("Prtc"), nd_Prts("Prts"), nd_Prti("Prti"), nd_While("While"),
+		nd_Assign("Assign"), nd_Negate("Negate"), nd_Not("Not"), nd_Mul("Multiply"), nd_Div("Divide"), nd_Mod("Mod"), nd_Add("Add"),
+		nd_Sub("Subtract"), nd_Lss("Less"), nd_Leq("LessEqual"),
+		nd_Gtr("Greater"), nd_Geq("GreaterEqual"), nd_Eql("Equal"), nd_Neq("NotEqual"), nd_And("And"), nd_Or("Or")
+		
+		private final String name;
+		
+		NodeType(String name) {
+			this.name = name;
+		}
+		
+		@Override
+		public String tostring() { return this.name; }
 	}
     static void error(int line, int pos, String msg) {
         if (line > 0 && pos > 0) {
