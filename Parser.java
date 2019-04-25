@@ -345,7 +345,7 @@ class Parser {
 				error(-1, -1, "Exception: " + e.getMessage());
             }
         } else {
-            error(-1, -1, "No args");
+            error(-1, -1, "No args!");
         }
     }
 }
