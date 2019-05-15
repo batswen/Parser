@@ -68,7 +68,7 @@ class Parser {
 		Op_lessequal(false, true, false, 10, NodeType.nd_Leq),
 		Op_greater(false, true, false, 10, NodeType.nd_Gtr),
 		Op_greaterequal(false, true, false, 10, NodeType.nd_Geq),
-        Op_equal(false, false, true, 9, NodeType.nd_Eql),
+        Op_equal(false, true, true, 9, NodeType.nd_Eql),
 		Op_notequal(false, true, false, 9, NodeType.nd_Neq),
 		Op_assign(false, false, false, -1, NodeType.nd_Assign),
 		Op_and(false, true, false, 5, NodeType.nd_And),
